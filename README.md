@@ -1,24 +1,20 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Ruby version
+  Ruby 2.3.1
+  Rails 5.1.5
 
-Things you may want to cover:
+## Database creation
 
-* Ruby version
+### users
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false, unique: true|
+|email|string|null: false, unipue: true|
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### todos
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integr|null: false, foreign_key: true|
+|text|string|null: false, unique: true|
+|limit|date||
