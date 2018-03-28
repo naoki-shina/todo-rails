@@ -1,19 +1,20 @@
 .header {
   height: 60px;
   width: 100%;
-  background-color: blue;
+  background-color: #005FFF ;
   &__cover {
-    height: 75%;
-    width: 100%;
-    padding: 5px 10px 0;
+    height: 80%;
+    width: 95%;
+    margin: 0 auto;
+    padding: 10px 0;
     &__left {
-      height: 100%;
+      height: 90%;
       width: 40%;
       float: left;
     }
     &__right {
-      height: 100%;
-      width: 30%;
+      height: 90%;
+      width: 20%;
       float: right;
     }
   }
@@ -23,7 +24,7 @@
   height: 100%;
   width: 40%;
   float: left;
-  background-color: white;
+  background-color: #5D99FF;
 }
 
 .search-box {
@@ -31,24 +32,45 @@
   width: 55%;
   margin-left: 5px;
   float: left;
-  background-color: white;
+  background-color: #5D99FF ;
 }
 
 .add-todo {
   height: 100%;
-  width: 40%;
+  width: 46%;
   float: left;
-  background-color: white;
+  background-color: #5D99FF ;
 }
 
 .user-profile {
   height: 100%;
-  weight: 45%;
-  float: right;
-  background-color: white;
+  width: 48%;
+  float: left;
+  margin-left: 5px;
+  background-color: #5D99FF ;
 }
 
 
 .sub-border {
-  border: 1px solid red;
+  border-radius: 10px;
+}
+
+.header-user-icon {
+  position: relative;
+  left: 30px;
+  top: 5px;
+  color: white;
+}
+
+.header-search-icon {
+  position: relative;
+  top: 5px;
+  left: 160px;
+  color: white;
+}
+
+.btn-text {
+  text-align: center;
+  color: white;
+  font-size: 14px;
 }

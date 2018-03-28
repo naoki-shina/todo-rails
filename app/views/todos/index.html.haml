@@ -2,10 +2,15 @@
   .header__cover.sub-border
     .header__cover__left.sub-border
       .bord-list.sub-border
+        %p.btn-text
+          ボードリスト
       .search-box.sub-border
+        = fa_icon "search", class: "fa-2x header-search-icon"
     .header__cover__right.sub-border
       .add-todo.sub-border
-      .user-plofile.sub-border
+        = fa_icon "plus", class: "fa-2x header-user-icon"
+      .user-profile.sub-border
+        = fa_icon "user", class: "fa-2x header-user-icon"
 .contents
   .contents__cover
     .contents__cover__right
