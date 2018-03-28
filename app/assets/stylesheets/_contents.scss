@@ -28,12 +28,53 @@
   width: 33%;
 }
 
-.todo-card {
-  height: 100px;
+.todo-btn {
+  height: 30px;
   width: 95%;
   margin: 10px auto;
   border-radius: 10px;
+  background-color: $btn-blue;
+  :hover {
+    cursor: pointer;
+    opacity: 0.2;
+  }
+  p {
+    padding-top: 5px;
+  }
+}
+
+.todo-card {
   background-color: white;
+  min-height: 100px;
+  width: 90%;
+  margin: 10px auto;
+  border-radius: 10px;
+  padding: 5px;
+  .limit-date {
+    margin-bottom: 5px;
+    border: none;
+    font-size: 14px;
+  }
+  .todo-text {
+    margin-bottom: 5px;
+    min-height: 40px;
+    width: 98%;
+  }
+  .submit-btn {
+    border-radius: 10px;
+    background-color: $btn-blue;
+    font-size: 14px;
+    color: white;
+    :hover {
+      cursor: pointer;
+    }
+  }
+  .fa-times {
+    margin: 0 10px;
+    :hover {
+      cursor: pointer;
+    }
+  }
 }
 
 .border {
