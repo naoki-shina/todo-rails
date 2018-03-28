@@ -1,7 +1,7 @@
 .header {
   height: 60px;
   width: 100%;
-  background-color: #005FFF ;
+  background-color: $background ;
   &__cover {
     height: 80%;
     width: 95%;
@@ -24,7 +24,7 @@
   height: 100%;
   width: 40%;
   float: left;
-  background-color: #5D99FF;
+  background-color: $btn;
 }
 
 .search-box {
@@ -32,14 +32,14 @@
   width: 55%;
   margin-left: 5px;
   float: left;
-  background-color: #5D99FF ;
+  background-color: $btn;
 }
 
 .add-todo {
   height: 100%;
   width: 46%;
   float: left;
-  background-color: #5D99FF ;
+  background-color: $btn;
 }
 
 .user-profile {
@@ -47,7 +47,7 @@
   width: 48%;
   float: left;
   margin-left: 5px;
-  background-color: #5D99FF ;
+  background-color: $btn;
 }
 
 
