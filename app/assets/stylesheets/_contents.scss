@@ -57,22 +57,26 @@
   }
   .todo-text {
     margin-bottom: 5px;
-    min-height: 40px;
+    min-height: 50px;
     width: 98%;
+    border: none;
   }
   .submit-btn {
     border-radius: 10px;
     background-color: $btn-blue;
     font-size: 14px;
     color: white;
+    border-style: none;
     :hover {
       cursor: pointer;
+      opacity: 0.2;
     }
   }
   .fa-times {
     margin: 0 10px;
     :hover {
       cursor: pointer;
+      opacity: 0.2;
     }
   }
 }
