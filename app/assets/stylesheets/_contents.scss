@@ -1,0 +1,33 @@
+.contents {
+  min-height: 600px;
+  width: 100%;
+  padding-top: 60px;
+  background-color: $light-bg;
+  @include clearfix();
+  &__cover {
+    min-height: 600px;
+    width: 90%;
+    margin: 0 auto;
+    &__left {
+      float: left;
+      background-color: $deep-bg;
+    }
+    &__center {
+      float: left;
+      background-color: $light-bg;
+    }
+    &__right {
+      float: left;
+      background-color: $deep-bg;
+    }
+  }
+}
+
+.list-cover {
+  height: 640px;
+  width: 33%;
+}
+
+.border {
+  // border: 1px solid red;
+}

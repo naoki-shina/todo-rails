@@ -1,6 +1,7 @@
 @import './reset';
 @import 'config/colors';
+@import 'mixin/clearfix';
 @import './header';
-@import "font-awesome";
-
-
+@import 'font-awesome';
+@import './footer';
+@import './contents';

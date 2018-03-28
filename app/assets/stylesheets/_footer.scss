@@ -1,0 +1,16 @@
+.footer {
+  height: 60px;
+  width: 100%;
+  background-color: $background ;
+  &__cover {
+    height: 80%;
+    width: 95%;
+    margin: 0 auto;
+    padding: 10px 0;
+    p {
+      font-size: 12px;
+      text-align: center;
+      color: white;
+    }
+  }
+}
