@@ -4,7 +4,9 @@
   Ruby 2.3.1
   Rails 5.1.5
 
+
 ## Database creation
+
 
 ### users
 |Column|Type|Options|
@@ -14,8 +16,9 @@
 
 #### association
 has_many :todos
-has_many :user-boards
-has_many :boards through user-board
+has_many :user_boards
+has_many :boards through user_board
+
 
 ### todos
 |Column|Type|Options|
@@ -27,6 +30,7 @@ has_many :boards through user-board
 #### association
 belongs_to :user
 
+
 ### boards
 |Column|Type|Options|
 |------|----|-------|
@@ -34,11 +38,17 @@ belongs_to :user
 
 #### association
 has_many :todos
-has_many :user-boards
-has_many :users through user-board
+has_many :user_boards
+has_many :users through user_board
 
-### boards
+
+### user-board
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
 |board_id|integer|null: false, foreign_key: true|
+
+#### association
+belongs_to :user
+belongs_to :board
+
