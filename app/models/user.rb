@@ -5,4 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :todos
+  has_many :boards, through: :user_boards
+  has_many :user_boards
 end

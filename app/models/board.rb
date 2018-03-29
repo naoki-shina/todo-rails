@@ -1,5 +1,5 @@
 class Board < ApplicationRecord
   has_many :todos
   has_many :user_boards
-  has_many :users, through: :user_board
+  has_many :users, through: :user_boards
 end
