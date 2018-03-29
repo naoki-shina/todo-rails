@@ -14,6 +14,8 @@
 
 #### association
 has_many :todos
+has_many :user-boards
+has_many :boards through user-board
 
 ### todos
 |Column|Type|Options|
@@ -24,3 +26,19 @@ has_many :todos
 
 #### association
 belongs_to :user
+
+### boards
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false, unique: true|
+
+#### association
+has_many :todos
+has_many :user-boards
+has_many :users through user-board
+
+### boards
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|board_id|integer|null: false, foreign_key: true|
