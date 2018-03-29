@@ -7,11 +7,14 @@
       .search-box.sub-border
         = fa_icon "search", class: "fa-2x header-search-icon"
     .header__cover__right.sub-border
-      .add-todo.sub-border
-        = link_to new_board_path do
-          = fa_icon "plus", class: "fa-2x header-user-icon"
+      .add-boader.sub-border
+        = fa_icon "plus", class: "fa-2x header-user-icon"
       .user-profile.sub-border
         = fa_icon "user", class: "fa-2x header-user-icon"
+  .header__create-board.sub-border.text-inline
+    = form_for @board, url: {controller: 'boards', action: 'create'} do |f|
+      = f.text_field :name, autocomplete: "off", placeholder: 'ボードタイトルを追加'
+      = f.submit "ボードを作成", redirect_to: root_path
   %ul.header__profile-list.sub-border.text-inline
     %li
       = link_to 'edit user profile', edit_user_registration_path

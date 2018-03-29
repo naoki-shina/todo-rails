@@ -9,6 +9,17 @@
     background-color: white;
     float: right;
     margin: 0;
+    position: absolute;
+    right: 50px;
+  }
+  &__create-board {
+    height: 100px;
+    width:150px;
+    background-color: white;
+    float: right;
+    margin: 0;
+    position: absolute;
+    right: 150px;
   }
   &__cover {
     height: 80%;
@@ -45,7 +56,7 @@
   background-color: $btn;
 }
 
-.add-todo {
+.add-boader {
   position: relative;
   height: 100%;
   width: 46%;
@@ -94,8 +105,6 @@
   list-style: none;
   text-align: center;
   line-height: 30px;
-  position: absolute;
-  right: 50px;
   li {
     display: list-item;
     border-bottom: solid 1px gray;
