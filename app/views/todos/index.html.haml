@@ -1,23 +1,4 @@
-.header
-  .header__cover.sub-border
-    .header__cover__left.sub-border
-      .board-list.sub-border
-        %p.btn-text
-          ボードリスト
-      .search-box.sub-border
-        = fa_icon "search", class: "fa-2x header-search-icon"
-    .header__cover__right.sub-border
-      .add-todo.sub-border
-        = fa_icon "plus", class: "fa-2x header-user-icon"
-      .user-profile.sub-border
-        = fa_icon "user", class: "fa-2x header-user-icon"
-  %ul.header__profile-list.sub-border.text-inline
-    %li
-      = link_to 'edit user profile', edit_user_registration_path
-    %li
-      = link_to 'Bord list',  root_path
-    %li
-      = link_to 'log out', destroy_user_session_path, method: :delete
+= render 'header'
 .contents
   .contents__cover
     .contents__cover__left.list-cover
@@ -30,7 +11,4 @@
           新たに作成しましょう!!
     .contents__cover__center.list-cover
     .contents__cover__right.list-cover
-.footer
-  .footer__cover
-    %p
-      copyright...
+= render 'footer'
