@@ -3,6 +3,13 @@
   width: 100%;
   background-color: $background ;
   position: fixed;
+  &__profile-list {
+    height: 100px;
+    width:150px;
+    background-color: white;
+    float: right;
+    margin: 0;
+  }
   &__cover {
     height: 80%;
     width: 95%;
@@ -77,4 +84,21 @@
   text-align: center;
   color: white;
   font-size: 14px;
+}
+
+.text-inline {
+  padding: 10px;
+  list-style: none;
+  text-align: center;
+  line-height: 30px;
+  position: absolute;
+  right: 50px;
+  li {
+    display: list-item;
+    border-bottom: solid 1px gray;
+  }
+}
+
+a {
+  text-decoration: none;
 }
