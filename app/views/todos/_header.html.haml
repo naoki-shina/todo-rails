@@ -6,7 +6,8 @@
           ボードリスト
       .search-box.sub-border
         = fa_icon "search", class: "fa-2x header-search-icon"
-    =@board.name
+    %h2.header-board
+      = @board.name
     .header__cover__right.sub-border
       .add-boader.sub-border
         = fa_icon "plus", class: "fa-2x header-user-icon"

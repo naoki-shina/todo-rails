@@ -36,7 +36,6 @@
     margin: 0 auto;
     padding: 10px 0;
     @include clearfix();
-    text-align: center;
     &__left {
       height: 90%;
       width: 40%;
@@ -124,4 +123,11 @@
 
 a {
   text-decoration: none;
+}
+
+.header-board {
+  color: white;
+  position: absolute;
+  left: 50%;
+  margin: 0;
 }
