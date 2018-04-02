@@ -6,11 +6,17 @@
           ボードリスト
       .search-box.sub-border
         = fa_icon "search", class: "fa-2x header-search-icon"
+    =@board.name
     .header__cover__right.sub-border
       .add-boader.sub-border
         = fa_icon "plus", class: "fa-2x header-user-icon"
       .user-profile.sub-border
         = fa_icon "user", class: "fa-2x header-user-icon"
+  %ul.header__board-list.sub-border.text-inline
+    - @boards.each do |board|
+      %li
+        = link_to  board_todos_path(board_id: board.id) do
+          = board.name
   .header__create-board.sub-border.text-inline
     = form_for @board, url: {controller: 'boards', action: 'create'} do |f|
       = f.text_field :name, autocomplete: "off", placeholder: 'ボードタイトルを追加'
