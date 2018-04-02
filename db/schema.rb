@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180327101942) do
+ActiveRecord::Schema.define(version: 20180329101951) do
+
+  create_table "boards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "todos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "user_id", null: false
@@ -18,6 +24,16 @@ ActiveRecord::Schema.define(version: 20180327101942) do
     t.date "limit"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "board_id"
+  end
+
+  create_table "user_boards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "user_id"
+    t.bigint "board_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["board_id"], name: "index_user_boards_on_board_id"
+    t.index ["user_id"], name: "index_user_boards_on_user_id"
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -38,4 +54,6 @@ ActiveRecord::Schema.define(version: 20180327101942) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "user_boards", "boards"
+  add_foreign_key "user_boards", "users"
 end

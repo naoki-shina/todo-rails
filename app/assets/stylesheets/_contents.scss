@@ -34,6 +34,14 @@
   margin: 10px auto;
   border-radius: 10px;
   background-color: $btn-blue;
+}
+
+.todo-card {
+  min-height: 100px;
+  width: 95%;
+  margin: 10px auto;
+  border-radius: 10px;
+  background-color: $btn-blue;
   :hover {
     cursor: pointer;
     opacity: 0.2;
@@ -79,6 +87,12 @@
       opacity: 0.2;
     }
   }
+}
+
+.info-text {
+  font-size: 14px;
+  line-height: 20px;
+  padding: 5px;
 }
 
 .border {

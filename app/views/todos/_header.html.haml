@@ -1,0 +1,31 @@
+.header
+  .header__cover.sub-border
+    .header__cover__left.sub-border
+      .board-list.sub-border
+        %p.btn-text
+          ボードリスト
+      .search-box.sub-border
+        = fa_icon "search", class: "fa-2x header-search-icon"
+    %h2.header-board
+      = @board.name
+    .header__cover__right.sub-border
+      .add-boader.sub-border
+        = fa_icon "plus", class: "fa-2x header-user-icon"
+      .user-profile.sub-border
+        = fa_icon "user", class: "fa-2x header-user-icon"
+  %ul.header__board-list.sub-border.text-inline
+    - @boards.each do |board|
+      %li
+        = link_to  board_todos_path(board_id: board.id) do
+          = board.name
+  .header__create-board.sub-border.text-inline
+    = form_for @board, url: {controller: 'boards', action: 'create'} do |f|
+      = f.text_field :name, autocomplete: "off", placeholder: 'ボードタイトルを追加'
+      = f.submit "ボードを作成", redirect_to: root_path
+  %ul.header__profile-list.sub-border.text-inline
+    %li
+      = link_to 'edit user profile', edit_user_registration_path
+    %li
+      = link_to 'Bord list',  root_path
+    %li
+      = link_to 'log out', destroy_user_session_path, method: :delete

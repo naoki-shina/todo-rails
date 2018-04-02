@@ -3,11 +3,39 @@
   width: 100%;
   background-color: $background ;
   position: fixed;
+  &__board-list {
+    min-height: 100px;
+    width:150px;
+    background-color: white;
+    float: left;
+    margin: 0;
+    position: absolute;
+    left: 50px;
+  }
+  &__profile-list {
+    height: 100px;
+    width:150px;
+    background-color: white;
+    float: right;
+    margin: 0;
+    position: absolute;
+    right: 50px;
+  }
+  &__create-board {
+    height: 100px;
+    width:150px;
+    background-color: white;
+    float: right;
+    margin: 0;
+    position: absolute;
+    right: 150px;
+  }
   &__cover {
     height: 80%;
     width: 95%;
     margin: 0 auto;
     padding: 10px 0;
+    @include clearfix();
     &__left {
       height: 90%;
       width: 40%;
@@ -21,14 +49,16 @@
   }
 }
 
-.bord-list {
+.board-list {
   height: 100%;
   width: 40%;
   float: left;
   background-color: $btn;
+  @include btn();
 }
 
 .search-box {
+  position: relative;
   height: 100%;
   width: 55%;
   margin-left: 5px;
@@ -36,19 +66,23 @@
   background-color: $btn;
 }
 
-.add-todo {
+.add-boader {
+  position: relative;
   height: 100%;
   width: 46%;
   float: left;
   background-color: $btn;
+  @include btn();
 }
 
 .user-profile {
+  position: relative;
   height: 100%;
   width: 48%;
   float: left;
   margin-left: 5px;
   background-color: $btn;
+  @include btn();
 }
 
 
@@ -57,16 +91,16 @@
 }
 
 .header-user-icon {
-  position: relative;
-  left: 30px;
+  position: absolute;
+  left: 40%;
   top: 5px;
   color: white;
 }
 
 .header-search-icon {
-  position: relative;
+  position: absolute;
   top: 5px;
-  left: 160px;
+  right: 10px;
   color: white;
 }
 
@@ -74,4 +108,26 @@
   text-align: center;
   color: white;
   font-size: 14px;
+}
+
+.text-inline {
+  padding: 10px;
+  list-style: none;
+  text-align: center;
+  line-height: 30px;
+  li {
+    display: list-item;
+    border-bottom: solid 1px gray;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+.header-board {
+  color: white;
+  position: absolute;
+  left: 50%;
+  margin: 0;
 }
