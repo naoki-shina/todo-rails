@@ -21,10 +21,13 @@ class TodosController < ApplicationController
     end
   end
 
-  def edit
-  end
-
   def update
+    @todo = Todo.find(params[:id])
+    if @todo.update(todo_params)
+      redirect_to board_todos_path(@board), notice: 'カードを編集しました'
+    else
+      render :index
+    end
   end
 
   def destroy

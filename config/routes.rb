@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 # board action
   resources :boards, only: [:index, :new, :create, :edit, :update] do
 # todo action
-    resources :todos, only: [:index, :create, :edit, :update, :destroy]
+    resources :todos, only: [:index, :create, :update, :destroy]
   end
 # index
   root 'boards#index'
