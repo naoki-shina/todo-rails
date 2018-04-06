@@ -36,22 +36,18 @@
   background-color: $btn-blue;
 }
 
-.todo-card {
+.todo-card-default {
   min-height: 100px;
   width: 95%;
   margin: 10px auto;
   border-radius: 10px;
   background-color: $btn-blue;
-  :hover {
-    cursor: pointer;
-    opacity: 0.2;
-  }
   p {
     padding-top: 5px;
   }
 }
 
-.todo-card {
+.todo-card-new {
   background-color: white;
   min-height: 100px;
   width: 90%;
@@ -62,6 +58,7 @@
     margin-bottom: 5px;
     border: none;
     font-size: 14px;
+    @include btn();
   }
   .todo-text {
     margin-bottom: 5px;
@@ -75,17 +72,11 @@
     font-size: 14px;
     color: white;
     border-style: none;
-    :hover {
-      cursor: pointer;
-      opacity: 0.2;
-    }
+    @include btn();
   }
   .fa-times {
     margin: 0 10px;
-    :hover {
-      cursor: pointer;
-      opacity: 0.2;
-    }
+    @include btn();
   }
 }
 

@@ -1,6 +1,6 @@
 @mixin btn() {
   &:hover {
     cursor: pointer;
-    opacity: 40%;
+    opacity: 0.4;
   }
 }
