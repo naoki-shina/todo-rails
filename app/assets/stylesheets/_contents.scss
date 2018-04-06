@@ -5,7 +5,7 @@
   background-color: $light-bg;
   @include clearfix();
   &__cover {
-    min-height: 600px;
+    min-height: 100%;
     width: 90%;
     margin: 0 auto;
     &__left {
@@ -24,7 +24,7 @@
 }
 
 .list-cover {
-  height: 640px;
+  height: 100%;
   width: 33%;
 }
 
@@ -34,6 +34,7 @@
   margin: 10px auto;
   border-radius: 10px;
   background-color: $btn-blue;
+  @include btn();
 }
 
 .todo-card-default {
@@ -76,6 +77,9 @@
   }
   .fa-times {
     margin: 0 10px;
+    @include btn();
+  }
+  .checkbox {
     @include btn();
   }
 }

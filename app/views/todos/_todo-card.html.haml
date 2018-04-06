@@ -1,9 +1,8 @@
-- @todos.each do |todo|
-  .todo-card{"data-todo-id": todo.id}
-    = form_for [board, todo], html:{id: "ajax-todo"} do |f|
-      = f.check_box :check, class: "checkbox"
-      = f.date_field :limit, class: "limit-date"
-      = f.text_area :text, class: "todo-text"
-      = f.submit "修正", class: "submit-btn"
-      = link_to board_todos_path do
-        .fa.fa-times.fa-lg
+.todo-card{"data-todo-id": todo.id}
+  = form_for [@board, todo], html:{id: "ajax-todo"}, method: :patch do |f|
+    = f.check_box :check, class: "checkbox"
+    = f.date_field :limit, class: "limit-date"
+    = f.text_area :text, class: "todo-text"
+    = f.submit "修正", class: "submit-btn"
+    = link_to board_todos_path do
+      .fa.fa-times.fa-lg
