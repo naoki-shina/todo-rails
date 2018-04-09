@@ -26,6 +26,6 @@
     %li
       = link_to 'edit user profile', edit_user_registration_path
     %li
-      = link_to 'Bord list',  root_path
+      = link_to 'Bord list',  user_path(current_user)
     %li
       = link_to 'log out', destroy_user_session_path, method: :delete
