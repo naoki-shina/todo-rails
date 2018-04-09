@@ -1,4 +1,11 @@
 = render 'todos/header'
 .contents
   .contents__cover
+    .boards-list-cover
+      %ul
+        %p
+          #{current_user.name}さんのボードリスト
+        - @boards.each do |board|
+          %li
+            = link_to "#{board.name}", board_todos_path(board)
 = render 'todos/footer'
