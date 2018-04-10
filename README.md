@@ -24,11 +24,15 @@ has_many :boards through user_board
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integr|null: false, foreign_key: true|
+|board_id|integr|null: false, foreign_key: true|
 |text|string|null: false, unique: true|
 |limit|date||
+|check|integer|null: false|
+|list|integer|null: false|
 
 #### association
 belongs_to :user
+belongs_to :board
 
 
 ### boards
