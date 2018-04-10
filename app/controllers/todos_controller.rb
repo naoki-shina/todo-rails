@@ -2,8 +2,10 @@ class TodosController < ApplicationController
   before_action :variable_sets
   # before_action :todo_params
   def index
+    @board_new = Board.new
     @todo = Todo.new
     @todos = @board.todos.includes(:user)
+  # set cards belongs to each list
     @list_1 = @todos.where(list: 1)
     @list_2 = @todos.where(list: 2)
     @list_3 = @todos.where(list: 3)
