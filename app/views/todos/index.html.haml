@@ -2,10 +2,11 @@
 .contents
   .contents__cover
     .contents__cover__left.list-cover
-      - @todos.each do |todo|
+      - @list_1.each do |todo|
         = render 'todo-card', {todo: todo}
       .todo-card-new.js-1
         = form_for [@board, @todo], html:{id: "ajax-todo"} do |f|
+          = f.hidden_field :list, value: "1"
           = f.check_box :check, class: "checkbox"
           = f.date_field :limit, class: "limit-date"
           = f.text_area :text, class: "todo-text"
@@ -16,10 +17,11 @@
         %p.btn-text
           カードを追加
     .contents__cover__center.list-cover
-      - @todos.each do |todo|
+      - @list_2.each do |todo|
         = render 'todo-card', {todo: todo}
       .todo-card-new.js-2
         = form_for [@board, @todo], html:{id: "ajax-todo"} do |f|
+          = f.hidden_field :list, value: "2"
           = f.check_box :check, class: "checkbox"
           = f.date_field :limit, class: "limit-date"
           = f.text_area :text, class: "todo-text"
@@ -30,10 +32,11 @@
         %p.btn-text
           カードを追加
     .contents__cover__right.list-cover
-      - @todos.each do |todo|
+      - @list_3.each do |todo|
         = render 'todo-card', {todo: todo}
       .todo-card-new.js-3
         = form_for [@board, @todo], html:{id: "ajax-todo"} do |f|
+          = f.hidden_field :list, value: "3"
           = f.check_box :check, class: "checkbox"
           = f.date_field :limit, class: "limit-date"
           = f.text_area :text, class: "todo-text"

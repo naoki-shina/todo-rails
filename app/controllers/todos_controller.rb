@@ -4,6 +4,9 @@ class TodosController < ApplicationController
   def index
     @todo = Todo.new
     @todos = @board.todos.includes(:user)
+    @list_1 = @todos.where(list: 1)
+    @list_2 = @todos.where(list: 2)
+    @list_3 = @todos.where(list: 3)
   end
 
   def create
@@ -42,6 +45,6 @@ class TodosController < ApplicationController
   end
 
   def todo_params
-    params.require(:todo).permit(:text, :limit, :check).merge(user_id: current_user.id)
+    params.require(:todo).permit(:text, :limit, :check, :list).merge(user_id: current_user.id)
   end
 end
