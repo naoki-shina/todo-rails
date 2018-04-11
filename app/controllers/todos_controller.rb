@@ -2,8 +2,10 @@ class TodosController < ApplicationController
   before_action :variable_sets, except: [:search]
   # before_action :todo_params
   def index
+  # set header variable for header
     @board_new = Board.new
     @todo = Todo.new
+  # set board todos
     @todos = @board.todos.includes(:user)
   # set cards belongs to each list
     @list_1 = @todos.where(list: 1)
@@ -39,8 +41,10 @@ class TodosController < ApplicationController
   end
 
   def search
+  # set variable for search view
   @board_new = Board.new
   @boards = current_user.boards
+  # set search todos
   @search_todos = current_user.todos.where('text LIKE(?)', "%#{params[:keyword]}%")
   end
 

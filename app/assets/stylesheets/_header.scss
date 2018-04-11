@@ -101,7 +101,7 @@
   position: absolute;
   top: 5px;
   right: 10px;
-  color: red;
+  color: white;
 }
 
 .btn-text {
@@ -132,16 +132,20 @@ a {
   margin: 0;
 }
 
-.search_cards {
-  height: 30px;
-  width: 75%;
-  margin: 5px;
-  border: none;
-  background-color: $btn;
-}
-
 .button {
   border: none;
-  background-color: none;
+  background-color: $btn;
   @include btn();
+}
+
+.search_todos {
+  width: 75%;
+  margin-top: 10px;
+  background-color: $btn;
+  border: none;
+  color: white;
+}
+
+input::-webkit-input-placeholder{
+  color: white;
 }

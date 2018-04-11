@@ -6,7 +6,7 @@
           ボードリスト
       .search-box.sub-border
         = form_tag(todos_search_path, method: :get) do
-          = text_field_tag :keyword, class: "search_cards", value: ""
+          = text_field_tag :keyword, '', class: "search_todos", placeholder: "検索ワード"
           = button_tag type: "submit", class: "button" do
             .fa.fa-search.fa-2x.header-search-icon
     %h2.header-board
