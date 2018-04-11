@@ -7,5 +7,10 @@
           #{current_user.name}さんのボードリスト
         - @boards.each do |board|
           %li
-            = link_to "#{board.name}", board_todos_path(board)
+            = link_to "#{board.name}", board_todos_path(board), class: "board-list-height"
+            %print
+              Member:
+            - board.users.each do |user|
+              = user.name
+            = link_to "edit", edit_user_path, class: "board-list-height"
 = render 'todos/footer'

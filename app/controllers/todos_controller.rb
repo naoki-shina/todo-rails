@@ -46,6 +46,7 @@ class TodosController < ApplicationController
   @boards = current_user.boards
   # set search todos
   @search_todos = current_user.todos.where('text LIKE(?)', "%#{params[:keyword]}%")
+  binding.pry
   end
 
   private
