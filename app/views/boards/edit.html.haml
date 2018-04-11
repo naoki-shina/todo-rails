@@ -1,0 +1,17 @@
+= render 'todos/header'
+.contents
+  .contents__cover
+    .boards-list-cover
+      %h2
+        #{@board.name}の編集
+      = form_for @board, method: :patch do |f|
+        = f.label :ボード名の変更
+        = f.text_field :name
+        = f.submit '変更'
+      - @users.each do |user|
+        = form_for user, method: :patch do |f|
+          = f.label :メンバーの変更
+          = f.text_field :name
+          = f.submit '変更'
+= render 'todos/footer'
+/ change to ajax after that

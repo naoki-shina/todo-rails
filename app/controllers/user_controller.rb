@@ -5,12 +5,4 @@ class UserController < ApplicationController
   # for show current_user board list
     @boards = current_user.boards
   end
-
-  def edit
-
-  end
-
-  def update
-
-  end
 end

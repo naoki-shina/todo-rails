@@ -12,5 +12,5 @@
               Member:
             - board.users.each do |user|
               = user.name
-            = link_to "edit", edit_user_path, class: "board-list-height"
+            = link_to "edit", edit_board_path(board), class: "board-list-height"
 = render 'todos/footer'
