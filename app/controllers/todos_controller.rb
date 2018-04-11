@@ -1,5 +1,5 @@
 class TodosController < ApplicationController
-  before_action :variable_sets
+  before_action :variable_sets, except: [:search]
   # before_action :todo_params
   def index
     @board_new = Board.new
@@ -36,6 +36,12 @@ class TodosController < ApplicationController
   end
 
   def destroy
+  end
+
+  def search
+  @board_new = Board.new
+  @boards = current_user.boards
+  @search_todos = current_user.todos.where('text LIKE(?)', "%#{params[:keyword]}%")
   end
 
   private

@@ -1,0 +1,11 @@
+= render 'header'
+.contents
+  .contents__cover
+    .boards-list-cover
+      %ul
+        %p
+          #{params[:keyword]}の検索結果
+        - @search_todos.each do |todo|
+          %li
+            = link_to "Todo: #{todo.text}, Board: #{todo.board.name}", board_todos_path(todo.board)
+= render 'footer'

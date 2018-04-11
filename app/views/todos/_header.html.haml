@@ -5,7 +5,10 @@
         %p.btn-text
           ボードリスト
       .search-box.sub-border
-        = fa_icon "search", class: "fa-2x header-search-icon"
+        = form_tag(todos_search_path, method: :get) do
+          = text_field_tag :keyword, class: "search_cards", value: ""
+          = button_tag type: "submit", class: "button" do
+            .fa.fa-search.fa-2x.header-search-icon
     %h2.header-board
     .header__cover__right.sub-border
       .add-boader.sub-border
@@ -19,12 +22,12 @@
           = board.name
   .header__create-board.sub-border.text-inline
     = form_for(@board_new, url: boards_path, method: :post) do |f|
-      = f.text_field :name, autocomplete: "off", placeholder: 'ボードタイトルを追加'
+      = f.text_field :name, autocomplete: "off", placeholder: 'ボードタイトル', size: "15"
       = f.submit "ボードを作成", redirect_to: root_path
   %ul.header__profile-list.sub-border.text-inline
     %li
-      = link_to 'edit user profile', edit_user_registration_path
+      = link_to 'Edit user profile', edit_user_registration_path
     %li
       = link_to 'Bord list',  user_path(current_user)
     %li
-      = link_to 'log out', destroy_user_session_path, method: :delete
+      = link_to 'Log out', destroy_user_session_path, method: :delete
