@@ -1,9 +1,8 @@
 class BoardsController < ApplicationController
-  before_action :board_variable, only: [:edit, :update]
+  before_action :board_set, only: [:edit, :update]
+  before_action :newBoard_setBoards, only: [:index, :edit]
 
   def index
-    @board_new = Board.new
-    @boards = current_user.boards
   end
 
   def create
@@ -14,8 +13,6 @@ class BoardsController < ApplicationController
   end
 
   def edit
-    @boards = current_user.boards
-    @board_new = Board.new
     @users = @board.users
   end
 
@@ -30,7 +27,12 @@ class BoardsController < ApplicationController
     params.require(:board).permit(:name, { :user_ids => [] })
   end
 
-  def board_variable
+  def board_set
     @board = Board.find(params[:id])
+  end
+
+  def newBoard_setBoards
+    @board_new = Board.new
+    @boards = current_user.boards
   end
 end

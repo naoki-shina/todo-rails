@@ -1,9 +1,9 @@
 class TodosController < ApplicationController
   before_action :variable_sets, except: [:search]
+  before_action :set_newBoard, only: [:index, :search]
   # before_action :todo_params
   def index
   # set header variable for header
-    @board_new = Board.new
     @todo = Todo.new
   # set board todos
     @todos = @board.todos.includes(:user)
@@ -42,10 +42,9 @@ class TodosController < ApplicationController
 
   def search
   # set variable for search view
-  @board_new = Board.new
-  @boards = current_user.boards
+    @boards = current_user.boards
   # set search todos
-  @search_todos = current_user.todos.where('text LIKE(?)', "%#{params[:keyword]}%")
+    @search_todos = current_user.todos.where('text LIKE(?)', "%#{params[:keyword]}%")
   end
 
   private
@@ -58,5 +57,9 @@ class TodosController < ApplicationController
 
   def todo_params
     params.require(:todo).permit(:text, :limit, :check, :list).merge(user_id: current_user.id)
+  end
+
+  def set_newBoard
+    @board_new = Board.new
   end
 end
