@@ -5,6 +5,9 @@
       %ul
         %p
           #{params[:keyword]}の検索結果
+        - @search_boards.each do |board|
+          %li
+            = link_to "Board: #{board.name}", board_todos_path(board)
         - @search_todos.each do |todo|
           %li
             = link_to "Todo: #{truncate(todo.text, length: 15)}, Board: #{todo.board.name}", board_todos_path(todo.board)

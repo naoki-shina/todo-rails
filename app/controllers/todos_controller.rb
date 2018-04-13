@@ -46,8 +46,9 @@ class TodosController < ApplicationController
   def search
   # set variable for search view
     @boards = current_user.boards
-  # set search todos
+  # set search todos n boards
     @search_todos = current_user.todos.where('text LIKE(?)', "%#{params[:keyword]}%")
+    @search_boards = @boards.where('name LIKE(?)', "%#{params[:keyword]}%")
   end
 
   private
