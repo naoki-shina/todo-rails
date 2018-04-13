@@ -38,6 +38,9 @@ class TodosController < ApplicationController
   end
 
   def destroy
+    @todo = Todo.find(params[:id])
+    @todo.destroy
+    redirect_to board_todos_path(@board)
   end
 
   def search
